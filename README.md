@@ -1,1 +1,1 @@
-# ws
+# yarn workspaces & pnp playground
