@@ -2,12 +2,9 @@
   "name": "ws",
   "private": true,
   "scripts": {
-    "g:sync": "yarn node syncPackages.js"
+    "g:sync": "yarn node syncPackages.js $INIT_CWD"
   },
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "a": "workspace:packages/a"
-  }
+  ]
 }

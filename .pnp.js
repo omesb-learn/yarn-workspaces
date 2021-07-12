@@ -44,6 +44,50 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["ws", ["workspace:."]]
     ],
     "fallbackPool": [
+      [
+        "a",
+        "workspace:packages/a"
+      ],
+      [
+        "b",
+        "workspace:packages/b"
+      ],
+      [
+        "c",
+        "workspace:packages/c"
+      ],
+      [
+        "chroma-js",
+        "npm:2.1.2"
+      ],
+      [
+        "cross-env",
+        "npm:6.0.3"
+      ],
+      [
+        "cross-spawn",
+        "npm:7.0.3"
+      ],
+      [
+        "isexe",
+        "npm:2.0.0"
+      ],
+      [
+        "path-key",
+        "npm:3.1.1"
+      ],
+      [
+        "shebang-command",
+        "npm:2.0.0"
+      ],
+      [
+        "shebang-regex",
+        "npm:3.0.0"
+      ],
+      [
+        "which",
+        "npm:2.0.2"
+      ]
     ],
     "locationBlacklistData": [
     ],
@@ -52,18 +96,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["a", "workspace:packages/a"]
           ],
           "linkType": "SOFT",
         }]
       ]],
       ["a", [
+        ["portal:../a::locator=b%40workspace%3Apackages%2Fb", {
+          "packageLocation": "./packages/a/",
+          "packageDependencies": [
+            ["a", "portal:../a::locator=b%40workspace%3Apackages%2Fb"],
+            ["chroma-js", "npm:2.1.2"]
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:packages/a", {
           "packageLocation": "./packages/a/",
           "packageDependencies": [
             ["a", "workspace:packages/a"],
-            ["chroma-js", "npm:2.1.2"],
-            ["prettier", "npm:2.2.1"]
+            ["chroma-js", "npm:2.1.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -73,8 +123,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/b/",
           "packageDependencies": [
             ["b", "workspace:packages/b"],
-            ["chroma-js", "npm:2.1.2"],
-            ["prettier", "npm:2.2.1"]
+            ["a", "portal:../a::locator=b%40workspace%3Apackages%2Fb"]
           ],
           "linkType": "SOFT",
         }]
@@ -138,15 +187,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["prettier", [
-        ["npm:2.2.1", {
-          "packageLocation": "./.yarn/cache/prettier-npm-2.2.1-e0670992f8-92c6c9f4b8.zip/node_modules/prettier/",
-          "packageDependencies": [
-            ["prettier", "npm:2.2.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["shebang-command", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/shebang-command-npm-2.0.0-eb2b01921d-85aa394d8c.zip/node_modules/shebang-command/",
@@ -180,8 +220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:.", {
           "packageLocation": "./",
           "packageDependencies": [
-            ["ws", "workspace:."],
-            ["a", "workspace:packages/a"]
+            ["ws", "workspace:."]
           ],
           "linkType": "SOFT",
         }]
