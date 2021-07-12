@@ -1,7 +1,13 @@
 {
   "name": "ws",
   "private": true,
+  "scripts": {
+    "g:sync": "yarn node syncPackages.js"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "a": "workspace:packages/a"
+  }
 }
