@@ -1,0 +1,6 @@
+{
+  "name": "a",
+  "dependencies": {
+    "chroma-js": "^2.1.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "c",
+  "scripts": {
+    "preinstall": "yarn exec touch hi",
+    "postinstall": "yarn exec touch hi"
+  }
+}
